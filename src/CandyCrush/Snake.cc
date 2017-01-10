@@ -1,5 +1,6 @@
 #include "Snake.hh"
 #include <iostream>
+#include <vector>
 
 typedef enum direction {
 	UP, DOWN, LEFT, RIGHT
@@ -16,6 +17,7 @@ public:
 	void Snake::growSnake();
 private:
 	int size;
-	std::pair<int, int> pos;
+	std::vector<std::pair<int, int>> pos;
 	direction dir;
+	int gridSize;
 };

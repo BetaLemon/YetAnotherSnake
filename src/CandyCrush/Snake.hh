@@ -13,16 +13,16 @@ int Snake::getSize() {
 void Snake::moveSnake(direction dir) {
 	switch (dir) {
 	case UP:
-		pos.second--;
+		pos.second - gridSize;
 		break;
 	case DOWN:
-		pos.second++;
+		pos.second + gridSize;
 		break;
 	case LEFT:
-		pos.first--;
+		pos.first - gridSize;
 		break;
 	case RIGHT:
-		pos.first++;
+		pos.first + gridSize;
 	}
 }
 
