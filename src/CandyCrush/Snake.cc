@@ -1,6 +1,7 @@
 #include "Snake.hh"
 #include <iostream>
 #include <vector>
+#include "Sprite.hh"
 
 typedef enum direction {
 	UP, DOWN, LEFT, RIGHT
@@ -10,14 +11,17 @@ class Snake {
 public:
 	Snake::Snake();
 	Snake::~Snake();
-	void Snake::moveSnake(direction);
-	void Snake::changeDir(direction);
-	int Snake::getSize();
+	void Snake::moveSnake();
+	//void Snake::changeDir();
+	int Snake::getLength();
 	void Snake::checkCollision();
 	void Snake::growSnake();
+	void Snake::update();
+	void Snake::draw();
 private:
-	int size;
+	int length;
 	std::vector<std::pair<int, int>> pos;
-	direction dir;
-	int gridSize;
+	std::vector<direction> dir;
+	int tileSize;
+	Sprite snakeSprite;
 };

@@ -24,6 +24,7 @@
     <ClCompile Include="main.cc" />
     <ClCompile Include="MenuScene.cc" />
     <ClCompile Include="Snake.cc" />
+    <ClCompile Include="SnakeScene.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assert.hh" />
@@ -41,6 +42,7 @@
     <ClInclude Include="Scene.hh" />
     <ClInclude Include="SceneManager.hh" />
     <ClInclude Include="Snake.hh" />
+    <ClInclude Include="SnakeScene.hh" />
     <ClInclude Include="Sprite.hh" />
     <ClInclude Include="System.hh" />
     <ClInclude Include="GUI.hh" />
