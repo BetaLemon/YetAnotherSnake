@@ -34,7 +34,7 @@ void GameScene::Update(void) {
 		mouseCoords = IM.GetMouseCoords();
 	} else if (IM.IsMouseUp<MOUSE_BUTTON_LEFT>()) {
 		Println("mxn: ", IM.GetMouseCoords());
-		m_grid.CheckMouseSwift(mouseCoords, IM.GetMouseCoords());
+		//m_grid.CheckMouseSwift(mouseCoords, IM.GetMouseCoords());
 	}
 	m_grid.Update(m_score); // Update grid
 	// Test InputManager key methods

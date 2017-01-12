@@ -9,6 +9,7 @@
 
 #pragma region GAME_SCENES
 #include "GameScene.hh"
+#include "MenuScene.hh"
 #pragma endregion TODO
 
 //! Initializes game needs and controls the game loop
@@ -30,7 +31,8 @@ namespace GameEngine {
 	//! Adds the game scenes into the Scene Manager and decides which is the first screen
 	void AddScenes(void) {
 		SM.AddScene<GameScene>();
-		SM.SetCurScene<GameScene>();
+		SM.AddScene<MenuScene>();
+		SM.SetCurScene<MenuScene>();
 	}
 	/** 
 	 * Runs the game specifying the window's name and dimensions

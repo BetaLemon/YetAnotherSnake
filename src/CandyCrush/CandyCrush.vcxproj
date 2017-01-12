@@ -23,6 +23,7 @@
     <ClCompile Include="Grid.cc" />
     <ClCompile Include="main.cc" />
     <ClCompile Include="MenuScene.cc" />
+    <ClCompile Include="Snake.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assert.hh" />
@@ -39,6 +40,7 @@
     <ClInclude Include="Resource.hh" />
     <ClInclude Include="Scene.hh" />
     <ClInclude Include="SceneManager.hh" />
+    <ClInclude Include="Snake.hh" />
     <ClInclude Include="Sprite.hh" />
     <ClInclude Include="System.hh" />
     <ClInclude Include="GUI.hh" />
