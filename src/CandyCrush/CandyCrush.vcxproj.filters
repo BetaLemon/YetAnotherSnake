@@ -25,12 +25,6 @@
     <ClCompile Include="MenuScene.cc">
       <Filter>Model</Filter>
     </ClCompile>
-    <ClCompile Include="Snake.cc">
-      <Filter>Model</Filter>
-    </ClCompile>
-    <ClCompile Include="SnakeScene.cc">
-      <Filter>Model</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Transform.hh">
@@ -97,6 +91,9 @@
       <Filter>Model</Filter>
     </ClInclude>
     <ClInclude Include="SnakeScene.hh">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeGrid.hh">
       <Filter>Model</Filter>
     </ClInclude>
   </ItemGroup>

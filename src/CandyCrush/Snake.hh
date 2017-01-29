@@ -1,9 +1,36 @@
 #pragma once
+#include <iostream>
+#include <vector>
+#include "Sprite.hh"
+#include <stdlib.h>
 
-Snake::Snake(){
+typedef enum direction {
+	UP, DOWN, LEFT, RIGHT
+};
+
+class Snake {
+public:
+	Snake::Snake();
+	Snake::~Snake();
+	void Snake::moveSnake();
+	//void Snake::changeDir();
+	int Snake::getLength();
+	void Snake::checkCollision();
+	void Snake::growSnake();
+	void Snake::update();
+	void Snake::draw();
+private:
+	int length;
+	std::vector<std::pair<int, int>> pos;
+	std::vector<direction> dir;
+	int tileSize;
+	Sprite snakeSprite;
+};
+
+Snake::Snake() {
 	tileSize = 14;
 	for (int i = 0; i < 3; i++) {
-		pos.push_back({ 100,100+(i*14) });
+		pos.push_back({ 100,100 + (i * 14) });
 		dir.push_back(UP);
 	}
 }
