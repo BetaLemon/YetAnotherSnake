@@ -3,25 +3,32 @@
 #include <vector>
 #include "Sprite.hh"
 #include <stdlib.h>
+#include "Food.hh"
 
 typedef enum direction {
 	UP, DOWN, LEFT, RIGHT
 };
 
+struct Coord {
+	int x, y;
+};
+
 class Snake {
 public:
-	Snake::Snake();
-	Snake::~Snake();
-	void Snake::moveSnake();
+	Snake();
+	~Snake();
+	void moveSnake();
 	//void Snake::changeDir();
-	int Snake::getLength();
-	void Snake::checkCollision();
-	void Snake::growSnake();
-	void Snake::update();
-	void Snake::draw();
+	int getLength();
+	bool checkCollision();
+	bool checkFood(Food food);
+	void changeDirection(direction direc);
+	void growSnake();
+	void update();
+	void draw();
 private:
 	int length;
-	std::vector<std::pair<int, int>> pos;
+	std::vector<Coord> pos;
 	std::vector<direction> dir;
 	int tileSize;
 	Sprite snakeSprite;
@@ -49,32 +56,58 @@ void Snake::moveSnake() {
 		}
 		switch (dir[i]) {
 		case UP:
-			pos[i].second - tileSize;
+			pos[i].y - tileSize;
 			break;
 		case DOWN:
-			pos[i].second + tileSize;
+			pos[i].y + tileSize;
 			break;
 		case LEFT:
-			pos[i].first - tileSize;
+			pos[i].x - tileSize;
 			break;
 		case RIGHT:
-			pos[i].first + tileSize;
+			pos[i].x + tileSize;
 		}
 	}
 }
 
-void Snake::growSnake() {
-	length++;
+void Snake::changeDirection(direction direc) {
+	dir[0] = direc;
 }
 
-void Snake::checkCollision() {
-	/*switch (dir) {
-	case UP:
-	}*/
+void Snake::growSnake() {
+	length++;
+	pos.push_back(pos[pos.size() - 1]);
+}
+
+bool Snake::checkCollision() {
+	bool collision = false;
+	for (int i = 1; i < pos.size(); i++) {
+		if (pos[0].x == pos[i].x && pos[0].y == pos[i].y) {
+			collision = true;
+		}
+	}
+	return collision;
+}
+
+bool Snake::checkFood(Food food) {
+	bool isFood = false;
+	for (int i = 0; i < food.getAmount(); i++) {
+		if (food.getFoodCoord(i).x == pos[0].x && food.getFoodCoord(i).y == pos[0].y) {
+			isFood = true;
+		}
+	}
+	return isFood;
 }
 
 void Snake::update() {
-
+	moveSnake();
+	if (checkCollision) {
+		std::cout << "Snake Dead." << std::endl;
+	}
+	if (checkFood) {
+		std::cout << "Food eaten." << std::endl;
+		growSnake();
+	}
 }
 
 void Snake::draw() {

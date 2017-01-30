@@ -27,6 +27,7 @@
   <ItemGroup>
     <ClInclude Include="Assert.hh" />
     <ClInclude Include="Color.hh" />
+    <ClInclude Include="Food.hh" />
     <ClInclude Include="GameEngine.hh" />
     <ClInclude Include="GameScene.hh" />
     <ClInclude Include="Grid.hh" />

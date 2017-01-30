@@ -5,33 +5,14 @@
 #include "SnakeGrid.hh"
 #include "Window.hh"
 #include "IOManager.hh"
-#include "TimeManager.hh"
-
-typedef enum TileType {
-	EMPTY, SNAKE_BODY, SNAKE_HEAD, SNAKE_BUTT, FOOD
-};
-
-class Tile {
-	int x;
-	int y;
-	TileType type;
-	Sprite sprite;
-	Tile() {
-		switch(type){
-		case EMPTY:
-			break;
-		case SNAKE_BODY:
-			sprite = 
-		}
-	}
-};
+#include "TimeManager.hh"¡
 
 class SnakeGrid {
 public:
-	SnakeGrid(int gridWidth, int gridHeight);
-	~SnakeGrid();
-	void Update(int &score);
-	void Draw();
+	SnakeGrid(int gridWidth, int gridHeight) {};
+	~SnakeGrid() {};
+	void Update(int &score) {};
+	void Draw() {};
 private:
-	std::vector<std::vector<Tile>> Grid;
+	//std::vector<std::vector<Tile>> Grid;
 };

@@ -96,5 +96,8 @@
     <ClInclude Include="SnakeGrid.hh">
       <Filter>Model</Filter>
     </ClInclude>
+    <ClInclude Include="Food.hh">
+      <Filter>Model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
